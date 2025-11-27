@@ -1,0 +1,101 @@
+﻿<Window x:Class="SistemaSeguimientoTesis.Views.EditarUsuarioWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Editar Usuario" Height="380" Width="470"
+        Background="#FFF9F9FF" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+
+	<Border Background="White" CornerRadius="10" Padding="20" Margin="10"
+            BorderBrush="#4B0082" BorderThickness="1">
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<!-- Título -->
+				<RowDefinition Height="Auto"/>
+				<!-- Nombre -->
+				<RowDefinition Height="Auto"/>
+				<!-- Email -->
+				<RowDefinition Height="Auto"/>
+				<!-- Password -->
+				<RowDefinition Height="Auto"/>
+				<!-- Rol -->
+				<RowDefinition Height="Auto"/>
+				<!-- Botones -->
+			</Grid.RowDefinitions>
+
+
+			<TextBlock Grid.Row="0"
+                       Text="Editar Usuario" FontSize="20" FontWeight="Bold"
+                       Foreground="#4B0082" HorizontalAlignment="Center"
+                       Margin="0,0,0,18"/>
+
+			<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+				<TextBlock Text="Nombre:" Width="110" VerticalAlignment="Center"/>
+				<TextBox x:Name="txtNombre"
+                         Width="270"
+                         Background="#F0F0F5"
+                         BorderBrush="#CCC"
+                         Padding="6"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
+				<TextBlock Text="Email:" Width="110" VerticalAlignment="Center"/>
+				<TextBox x:Name="txtEmail"
+                         Width="270"
+                         Background="#F0F0F5"
+                         BorderBrush="#CCC"
+                         Padding="6"/>
+			</StackPanel>
+
+			<!-- PasswordBox sin Padding -->
+			<StackPanel Grid.Row="3" Margin="0,0,0,10">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Contraseña:" Width="110" VerticalAlignment="Center"/>
+
+					<Border Background="#F0F0F5"
+                            BorderBrush="#CCC"
+                            BorderThickness="1"
+                            CornerRadius="4"
+                            Padding="6"
+                            Width="270" Height="32">
+						<PasswordBox x:Name="txtPassword"
+                                     Background="Transparent"
+                                     BorderThickness="0"/>
+					</Border>
+				</StackPanel>
+
+				<TextBlock Text="(Deja vacía la contraseña para no cambiarla)"
+                           Foreground="Gray"
+                           FontSize="11"
+                           Margin="110,4,0,0"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,0,0,18">
+				<TextBlock Text="Rol:" Width="110" VerticalAlignment="Center"/>
+				<ComboBox x:Name="cbRol"
+                          Width="270"
+                          Background="#F0F0F5"
+                          BorderBrush="#CCC">
+					<ComboBoxItem Content="Admin"/>
+					<ComboBoxItem Content="Profesor"/>
+					<ComboBoxItem Content="Alumno"/>
+				</ComboBox>
+			</StackPanel>
+
+			<StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+				<Button Content="Cancelar"
+                        Width="110" Height="30"
+                        Margin="0,0,8,0"
+                        Style="{StaticResource TransparentButtonStyle}"
+                        Click="BtnCancelar_Click"/>
+				<Button Content="Guardar Cambios"
+                        Width="150" Height="30"
+                        Style="{StaticResource PurpleButtonStyle}"
+                        IsDefault="True"
+                        Click="BtnGuardar_Click"/>
+			</StackPanel>
+
+		</Grid>
+	</Border>
+</Window>
+

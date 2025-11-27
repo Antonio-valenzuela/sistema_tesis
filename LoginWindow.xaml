@@ -1,0 +1,122 @@
+﻿<Window x:Class="SistemaSeguimientoTesis.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Inicio de Sesión"
+        Height="420" Width="360"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF9F9FF"
+        WindowStyle="None">
+
+	<Border CornerRadius="10"
+            Background="White"
+            BorderBrush="#4B0082"
+            BorderThickness="2"
+            Padding="0"
+            Margin="10">
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="48"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<!-- Barra superior -->
+			<DockPanel Grid.Row="0"
+                       Background="#4B0082"
+                       LastChildFill="False"
+                       Height="48">
+
+				<TextBlock Text="Sistema de Seguimiento de Tesis"
+                           Foreground="White"
+                           FontSize="14"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           Margin="12,0,0,0"
+                           DockPanel.Dock="Left"/>
+
+				<Button DockPanel.Dock="Right"
+                        Width="40" Height="40"
+                        Margin="0,4,6,4"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderBrush="Transparent"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Content="✕"
+                        Click="Cerrar_Click"/>
+			</DockPanel>
+
+			<!-- Contenido (Padding correcto usando Border) -->
+			<Border Grid.Row="1" Padding="20" Background="Transparent">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Grid.Row="0"
+                               Text="Inicio de Sesión"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#4B0082"
+                               HorizontalAlignment="Center"
+                               Margin="0,10,0,20"/>
+
+					<!-- Correo -->
+					<StackPanel Grid.Row="1" Margin="0,0,0,12">
+						<TextBlock Text="Correo electrónico:"
+                                   FontWeight="SemiBold"
+                                   Foreground="#333"/>
+						<TextBox x:Name="txtCorreo"
+                                 Width="260" Height="32"
+                                 Background="#F0F0F5"
+                                 Margin="0,6,0,0"
+                                 Padding="6"/>
+					</StackPanel>
+
+					<!-- Contraseña -->
+					<StackPanel Grid.Row="2" Margin="0,0,0,18">
+						<TextBlock Text="Contraseña:"
+                                   FontWeight="SemiBold"
+                                   Foreground="#333"/>
+
+						<Border Background="#F0F0F5"
+                                BorderBrush="#CCC"
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                Padding="6"
+                                Margin="0,6,0,0"
+                                Width="260" Height="32">
+							<PasswordBox x:Name="txtPassword"
+                                         Background="Transparent"
+                                         BorderThickness="0"/>
+						</Border>
+					</StackPanel>
+
+					<Button Grid.Row="3"
+                            Content="Iniciar Sesión"
+                            Width="170" Height="38"
+                            Style="{StaticResource PurpleButtonStyle}"
+                            HorizontalAlignment="Center"
+                            IsDefault="True"
+                            Click="IniciarSesion_Click">
+						<Button.Effect>
+							<DropShadowEffect Color="#888"
+                                              ShadowDepth="2"
+                                              BlurRadius="6"/>
+						</Button.Effect>
+					</Button>
+
+				</Grid>
+			</Border>
+
+		</Grid>
+	</Border>
+</Window>
+
+
+
+
